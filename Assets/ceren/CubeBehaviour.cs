@@ -1,76 +1,65 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-[System.Flags]
-public enum CubeFunctionality
+public class CubeBehaviorNewInput : MonoBehaviour
 {
-    None = 0,
-    HideShow = 1 << 0, // 0b01
-    Scale = 1 << 1     // 0b10
-}
-
-public class CubeBehavior : MonoBehaviour
-{
-    [Header("Settings")]
-    public CubeFunctionality functionalityMask = CubeFunctionality.HideShow | CubeFunctionality.Scale;
-
-    [Header("Scaling Settings")]
-    [Range(0.1f, 10f)]
-    public float transitionSpeed = 5f;
-
     private Vector3 originalScale;
-    private Vector3 targetScale;
-
     private Rigidbody rb;
     private float originalMass;
-    private float targetMass;
 
     private bool hidden = false;
     private bool scaledUp = false;
 
-    void Start()
+    public InputActionAsset inputActions;
+    private InputAction hideShowAction;
+    private InputAction scaleAction;
+
+    private void Awake()
     {
         originalScale = transform.localScale;
-        targetScale = originalScale;
 
         rb = GetComponent<Rigidbody>();
         if (rb != null)
-        {
             originalMass = rb.mass;
-            targetMass = originalMass;
-        }
+
+        var map = inputActions.FindActionMap("CubeActions");
+        hideShowAction = map.FindAction("HideShow");
+        scaleAction = map.FindAction("Scale");
+
+        hideShowAction.performed += ctx => ToggleHideShow();
+        scaleAction.performed += ctx => ToggleScale();
     }
 
-    void Update()
+    private void OnEnable()
     {
-    
-        if (Input.GetKeyDown(KeyCode.Alpha1) && (functionalityMask & CubeFunctionality.HideShow) != 0)
-        {
-            hidden = !hidden;
+        hideShowAction.Enable();
+        scaleAction.Enable();
+    }
 
-            Renderer rend = GetComponent<Renderer>();
-            Collider col = GetComponent<Collider>();
+    private void OnDisable()
+    {
+        hideShowAction.Disable();
+        scaleAction.Disable();
+    }
 
-            if (rend != null) rend.enabled = !hidden;
-            if (col != null) col.enabled = !hidden;
-        }
+    private void ToggleHideShow()
+    {
+        hidden = !hidden;
 
+        Renderer rend = GetComponent<Renderer>();
+        Collider col = GetComponent<Collider>();
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && (functionalityMask & CubeFunctionality.Scale) != 0)
-        {
-            scaledUp = !scaledUp;
-            targetScale = scaledUp ? originalScale * 2f : originalScale;
+        if (rend != null) rend.enabled = !hidden;
+        if (col != null) col.enabled = !hidden;
+    }
 
-            if (rb != null)
-                targetMass = scaledUp ? originalMass * 8f : originalMass;
-        }
+    private void ToggleScale()
+    {
+        scaledUp = !scaledUp;
 
-        // --- Smooth transition ---
-        if ((functionalityMask & CubeFunctionality.Scale) != 0)
-        {
-            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * transitionSpeed);
+        transform.localScale = scaledUp ? originalScale * 2f : originalScale;
 
-            if (rb != null)
-                rb.mass = Mathf.Lerp(rb.mass, targetMass, Time.deltaTime * transitionSpeed);
-        }
+        if (rb != null)
+            rb.mass = scaledUp ? originalMass * 8f : originalMass;
     }
 }

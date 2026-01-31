@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "CubeAction",
+    "maps": [
+        {
+            "name": "CubeActions",
+            "id": "8953bf65-492b-4928-8f31-cb0224d5031d",
+            "actions": [
+                {
+                    "name": "HideShow",
+                    "type": "Button",
+                    "id": "0152720e-119e-4235-945e-6284117eb6f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Scale",
+                    "type": "Button",
+                    "id": "b8e50f88-c35b-409c-897b-b2b07074311f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9ddb659a-26df-49b4-b1a4-91c00ba69016",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HideShow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0393a795-a88b-4745-8c0e-b549355d733b",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
