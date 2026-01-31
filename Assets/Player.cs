@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
   public float xSensitivity = 60;
   public float ySensitivity = 60;
 
+  public Camera cam;
+
   private bool sprinting = false;
 
   private Rigidbody held_object = null;
@@ -33,9 +35,6 @@ public class Player : MonoBehaviour
   void Awake(){
     p = new PlayerController();
     pc = GetComponent<CharacterController>();
-
-    p.Player.Sprint.started += ctx => sprinting = true;
-    p.Player.Sprint.canceled += ctx => sprinting = false;
   }
   void OnEnable(){
     p.Enable();
@@ -50,8 +49,16 @@ public class Player : MonoBehaviour
 
     velocity.x = p.Player.Move.ReadValue<Vector2>().x;
     velocity.z = p.Player.Move.ReadValue<Vector2>().y;
+    Vector3 camForward = cam.transform.forward;
+    Vector3 camRight = cam.transform.right;
 
-    pc.Move((velocity) * current_speed * Time.deltaTime);
+    camForward.y = 0;
+    camRight.y = 0;
+    camForward.Normalize();
+    camRight.Normalize();
+    Vector3 moveDirection = (camForward * velocity.z) + (camRight * velocity.x);
+
+    pc.Move(moveDirection * current_speed * Time.deltaTime);
     grvty.y += G * Time.deltaTime;
     if(is_grouneded && grvty.y < 0){
       grvty.y = -2;
