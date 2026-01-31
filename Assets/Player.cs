@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private float G = -9.8f * 2.0f;
 
     private float sprinting_speed = 5f;
-    private float move_speed = 3.5f;
+    private float move_speed = 10f;
     private float current_speed;
 
     private bool is_grounded;
@@ -24,15 +24,19 @@ public class Player : MonoBehaviour
     public Camera cam;
     private bool sprinting = false;
 
-    public float coyoteTime = 0.3f;
+    public float coyoteTime = 0.00f;
     private float coyoteTimer;
 
     private bool jumpRequested = false;
+    private float jumpBufferTime = 0f;
 
     void Awake()
     {
         p = new PlayerController();
         pc = GetComponent<CharacterController>();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void OnEnable() => p.Enable();
@@ -40,15 +44,20 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        current_speed = sprinting ? sprinting_speed : move_speed;
+        current_speed = move_speed;
 
         is_grounded = pc.isGrounded;
         if (is_grounded)
             coyoteTimer = coyoteTime;
         else
             coyoteTimer -= Time.deltaTime;
+        if(jumpBufferTime >= 0){
+          jumpBufferTime -= Time.deltaTime;
+
+        }
         if (p.Player.Jump.triggered)
-            jumpRequested = true;
+          jumpBufferTime = 0.1f;
+
     }
 
     void FixedUpdate()
@@ -65,7 +74,7 @@ public class Player : MonoBehaviour
         Vector3 moveDir = camForward * input.y + camRight * input.x;
         pc.Move(moveDir * current_speed * Time.fixedDeltaTime);
 
-        if (jumpRequested && (is_grounded || coyoteTimer > 0f))
+        if (jumpBufferTime >= 0 && (is_grounded || coyoteTimer > 0f))
         {
             grvty.y = Mathf.Sqrt(jump_height * -2f * G);
             jumpRequested = false;
@@ -78,13 +87,20 @@ public class Player : MonoBehaviour
             grvty.y = -2;
 
         pc.Move(grvty * Time.fixedDeltaTime);
+
     }
 
     void LateUpdate()
     {
-        Vector2 look = p.Player.Look.ReadValue<Vector2>();
-        xRotation -= look.y * ySensitivity * Time.deltaTime;
-        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
-        transform.Rotate(Vector3.up * look.x * xSensitivity * Time.deltaTime);
+        float mouseX = p.Player.Look.ReadValue<Vector2>().x;
+        float mouseY = p.Player.Look.ReadValue<Vector2>().y;
+        
+        xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
+        xRotation = Mathf.Clamp(xRotation, -80, 80);
+
+        cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
+        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
+
     }
 }
