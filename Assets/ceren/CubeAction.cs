@@ -109,6 +109,15 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Button"",
+                    ""id"": ""c62c0e01-9a0a-47eb-9250-1ea2d4799221"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -133,6 +142,17 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""action"": ""Scale"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48a705c5-ceb5-4507-af30-a4e784bac594"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
         m_CubeActions = asset.FindActionMap("CubeActions", throwIfNotFound: true);
         m_CubeActions_HideShow = m_CubeActions.FindAction("HideShow", throwIfNotFound: true);
         m_CubeActions_Scale = m_CubeActions.FindAction("Scale", throwIfNotFound: true);
+        m_CubeActions_Move = m_CubeActions.FindAction("Move", throwIfNotFound: true);
     }
 
     ~@CubeAction()
@@ -225,6 +246,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
     private List<ICubeActionsActions> m_CubeActionsActionsCallbackInterfaces = new List<ICubeActionsActions>();
     private readonly InputAction m_CubeActions_HideShow;
     private readonly InputAction m_CubeActions_Scale;
+    private readonly InputAction m_CubeActions_Move;
     /// <summary>
     /// Provides access to input actions defined in input action map "CubeActions".
     /// </summary>
@@ -244,6 +266,10 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CubeActions/Scale".
         /// </summary>
         public InputAction @Scale => m_Wrapper.m_CubeActions_Scale;
+        /// <summary>
+        /// Provides access to the underlying input action "CubeActions/Move".
+        /// </summary>
+        public InputAction @Move => m_Wrapper.m_CubeActions_Move;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -276,6 +302,9 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
             @Scale.started += instance.OnScale;
             @Scale.performed += instance.OnScale;
             @Scale.canceled += instance.OnScale;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
         /// <summary>
@@ -293,6 +322,9 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
             @Scale.started -= instance.OnScale;
             @Scale.performed -= instance.OnScale;
             @Scale.canceled -= instance.OnScale;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
         /// <summary>
@@ -347,5 +379,12 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnScale(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMove(InputAction.CallbackContext context);
     }
 }
