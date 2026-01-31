@@ -643,8 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ca9ca4c5cba4f40bf8fdf93deb6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehavior
-  functionalityMask: 3
-  transitionSpeed: 6.16
+  inputActions: {fileID: -944628639613478452, guid: 0762eb0ecd4734f37accca89e7b46d62, type: 3}
 --- !u!1 &471417255
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,8 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ca9ca4c5cba4f40bf8fdf93deb6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehavior
-  functionalityMask: 3
-  transitionSpeed: 5
+  inputActions: {fileID: -944628639613478452, guid: 0762eb0ecd4734f37accca89e7b46d62, type: 3}
 --- !u!1 &1096091752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,8 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ca9ca4c5cba4f40bf8fdf93deb6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehavior
-  functionalityMask: 3
-  transitionSpeed: 5
+  inputActions: {fileID: -944628639613478452, guid: 0762eb0ecd4734f37accca89e7b46d62, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
