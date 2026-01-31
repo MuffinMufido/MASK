@@ -69,13 +69,13 @@ public class Player : MonoBehaviour
 
 
   void LateUpdate(){
-    // float mouseX = p.Player.Look.ReadValue<Vector2>().x;
-    // float mouseY = p.Player.Look.ReadValue<Vector2>().y;
-    //
-    // xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
-    // xRotation = Mathf.Clamp(xRotation, -80, 80);
-    //
-    // transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
+    float mouseX = p.Player.Look.ReadValue<Vector2>().x;
+    float mouseY = p.Player.Look.ReadValue<Vector2>().y;
+
+    xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
+    xRotation = Mathf.Clamp(xRotation, -80, 80);
+
+    transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
   }
 
   void Update()
