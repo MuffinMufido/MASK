@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(big_guy){return;}
+
         Vector2 input = p.Player.Move.ReadValue<Vector2>();
         Vector3 camForward = cam.transform.forward;
         Vector3 camRight = cam.transform.right;
@@ -87,13 +87,17 @@ public class Player : MonoBehaviour
         camRight.Normalize();
 
         Vector3 moveDir = camForward * input.y + camRight * input.x;
-        pc.Move(moveDir * current_speed * Time.fixedDeltaTime);
+        if(! big_guy){
 
-        if (jumpBufferTime >= 0 && (is_grounded || coyoteTimer > 0f))
-        {
-            grvty.y = Mathf.Sqrt(jump_height * -2f * G);
-            jumpRequested = false;
-            coyoteTimer = 0f;
+          pc.Move(moveDir * current_speed * Time.fixedDeltaTime);
+
+          if ( jumpBufferTime >= 0 && (is_grounded || coyoteTimer > 0f))
+          {
+              grvty.y = Mathf.Sqrt(jump_height * -2f * G);
+              jumpRequested = false;
+              coyoteTimer = 0f;
+          }
+
         }
 
         grvty.y += G * Time.fixedDeltaTime;
@@ -102,6 +106,7 @@ public class Player : MonoBehaviour
             grvty.y = -2;
 
         pc.Move(grvty * Time.fixedDeltaTime);
+
 
     }
 

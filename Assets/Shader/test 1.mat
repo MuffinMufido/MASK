@@ -29,10 +29,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Brightness: -0.37
-    - _DitherScale: 2.7
+    - _Brightness: -0.78
+    - _DitherScale: 2.78
+    - _FadeEndY: -15
+    - _FadeStartY: -5
     m_Colors:
     - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 0.30460495, g: 1, b: 0.22560894, a: 1}
+    - _LightColor: {r: 0.101114124, g: 0.99597454, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
