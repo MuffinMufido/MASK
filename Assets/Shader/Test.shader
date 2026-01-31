@@ -7,6 +7,8 @@ Shader "Custom/Test"
         _Brightness("Brightness", Range(-1, 1)) = 0
         _LightColor("Light Color", Color) = (1, 1, 1, 1)
         _DarkColor("Dark Color", Color) = (0, 0, 0, 1)
+        _FadeStartY("Fade Start Y", Float) = -5
+        _FadeEndY("Fade End Y", Float) = -15
     }
 
     SubShader
@@ -45,6 +47,8 @@ Shader "Custom/Test"
             float _Brightness;
             half4 _LightColor;
             half4 _DarkColor;
+            float _FadeStartY;
+            float _FadeEndY;
 
             // 8x8 Bayer ordered dithering matrix (normalized to 0-1)
             static const float bayerMatrix[64] = {
@@ -103,8 +107,11 @@ Shader "Custom/Test"
                 // Combine into single brightness with ambient floor
                 float totalLight = saturate(dot(lighting, float3(0.299, 0.587, 0.114)) + 0.15);
 
+                // Darken based on world Y position
+                float fadeFactor = saturate((posWS.y - _FadeEndY) / (_FadeStartY - _FadeEndY));
+
                 // Final brightness
-                float brightness = saturate(luminance * totalLight + _Brightness);
+                float brightness = saturate(luminance * totalLight * fadeFactor + _Brightness);
 
                 // Ordered dithering: compare brightness against Bayer threshold
                 float threshold = GetBayerValue(IN.positionHCS.xy);

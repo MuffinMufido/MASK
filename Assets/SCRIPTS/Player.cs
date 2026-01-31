@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public float ySensitivity = 60;
 
     public Camera cam;
+    public Camera cam_big;
+
     private bool sprinting = false;
 
     public float coyoteTime = 0.00f;
@@ -30,13 +32,23 @@ public class Player : MonoBehaviour
     private bool jumpRequested = false;
     private float jumpBufferTime = 0f;
 
+    public bool big_guy = false;
+
     void Awake()
     {
         p = new PlayerController();
         pc = GetComponent<CharacterController>();
+        pc.enabled = false;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        p.Player.Big.performed += ctx => ToggleBigGuy();
+        
+    }
+
+    public void Init(){
+      pc.enabled = true;
     }
 
     void OnEnable() => p.Enable();
@@ -44,6 +56,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
+        if(big_guy){return;}
         current_speed = move_speed;
 
         is_grounded = pc.isGrounded;
@@ -62,6 +76,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(big_guy){return;}
         Vector2 input = p.Player.Move.ReadValue<Vector2>();
         Vector3 camForward = cam.transform.forward;
         Vector3 camRight = cam.transform.right;
@@ -92,15 +107,25 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
+
         float mouseX = p.Player.Look.ReadValue<Vector2>().x;
         float mouseY = p.Player.Look.ReadValue<Vector2>().y;
         
         xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
         xRotation = Mathf.Clamp(xRotation, -80, 80);
+        if(big_guy){
+          cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        }
+        else{
+          cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+          transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
+        }
 
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+    }
 
-        transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
-
+    void ToggleBigGuy(){
+      cam.enabled = !cam.enabled;
+      cam_big.enabled = !cam_big.enabled;
+      big_guy = !big_guy;
     }
 }

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test 2
-  m_Shader: {fileID: 4800000, guid: 9814d173636aa55d1acd4a7a33620d20, type: 3}
+  m_Name: Portal
+  m_Shader: {fileID: 4800000, guid: 15ff036fc51dd1c19a0bd0f5ff605b89, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,10 +29,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Brightness: -0.62
-    - _DitherScale: 1.99
+    - _Brightness: -0.14
+    - _DitherScale: 2.46
+    - _FadeEndY: -15
+    - _FadeStartY: -5
+    - _RingSpeed: 0.56
+    - _Rings: 2
+    - _SpinSpeed: 0.77
+    - _SwirlStrength: 10
     m_Colors:
-    - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DarkColor: {r: 0, g: 0, b: 0, a: 0}
+    - _LightColor: {r: 0, g: 0.7671809, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
