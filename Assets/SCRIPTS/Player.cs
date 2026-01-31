@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
         xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
         xRotation = Mathf.Clamp(xRotation, -80, 80);
         if(big_guy){
-          cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+          //cam_big.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         }
         else{
           cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
