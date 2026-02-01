@@ -8,7 +8,8 @@ public class CubeBehaviorNewInput : MonoBehaviour
     [Tooltip("Enable this cube to move along a path.")]
     public bool canMove = false;
     public bool canScale = false;
-    public bool canHide = false;
+
+    private bool canHide = true;
     [Tooltip("Speed of movement along the path.")]
     public float moveSpeed = 2f;
 
