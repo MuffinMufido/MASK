@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehaviorNewInput
   canMove: 0
+  canScale: 0
+  canHide: 0
   moveSpeed: 2
   inputActions: {fileID: -944628639613478452, guid: 0762eb0ecd4734f37accca89e7b46d62, type: 3}
   hideShowActionName: HideShow
@@ -408,6 +410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehaviorNewInput
   canMove: 0
+  canScale: 0
+  canHide: 0
   moveSpeed: 2
   inputActions: {fileID: -944628639613478452, guid: 0762eb0ecd4734f37accca89e7b46d62, type: 3}
   hideShowActionName: HideShow
@@ -782,6 +786,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehaviorNewInput
   canMove: 0
+  canScale: 0
+  canHide: 0
   moveSpeed: 2
   inputActions: {fileID: -944628639613478452, guid: 0762eb0ecd4734f37accca89e7b46d62, type: 3}
   hideShowActionName: HideShow
