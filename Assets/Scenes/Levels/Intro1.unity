@@ -157,7 +157,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7544642, g: 0.7275196, b: 0.7275196, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -362,13 +362,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320768771}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42203733, y: -0.047489442, z: 0.022144696, w: 0.90506285}
+  m_LocalRotation: {x: 0.20233211, y: -0.041115493, z: 0.032483116, w: 0.9779141}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -1446.007, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.478, y: -1444.206, z: 2.931}
 --- !u!114 &320768774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,15 +496,51 @@ PrefabInstance:
       objectReference: {fileID: 1563885306}
     - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
       propertyPath: inital_list.Array.size
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
       propertyPath: 'inital_list.Array.data[0]'
-      value: I was waiting for you.
+      value: 'Oh... you are back. '
       objectReference: {fileID: 0}
     - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
       propertyPath: 'inital_list.Array.data[1]'
-      value: Now take me, take me and embrace me.
+      value: 'And here i tought you were never coming back... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[2]'
+      value: '... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[3]'
+      value: 'Who am i kidding i knew you were coming. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[4]'
+      value: 'It was destined. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[5]'
+      value: 'You like me,   '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[6]'
+      value: you need me,
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[7]'
+      value: YOU DESIRE ME.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[8]'
+      value: 'At long last we are whole again. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[9]'
+      value: Shush now... I know it harsh out there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: 'inital_list.Array.data[10]'
+      value: 'Wear me so that i can protect you.  '
       objectReference: {fileID: 0}
     - target: {fileID: 6331214302496845874, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
       propertyPath: m_text
@@ -548,11 +584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f15cca26249fb8b43a42e64f5950415e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.919
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f15cca26249fb8b43a42e64f5950415e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.568
+      value: -2.383
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f15cca26249fb8b43a42e64f5950415e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -651,11 +687,67 @@ PlayableDirector:
     value: {fileID: 1301482388}
   m_ExposedReferences:
     m_References: []
+--- !u!1 &1348786970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348786971}
+  - component: {fileID: 1348786972}
+  m_Layer: 0
+  m_Name: CutScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1348786971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348786970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.98139, y: -0, z: -1.98659}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1348786972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348786970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a5fdeccc3952fc96e91a47c3fba4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutSceneController
+  nc: {fileID: 1563885301}
 --- !u!1 &1563885300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8425721385245888370, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
   m_PrefabInstance: {fileID: 1016328130}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1563885301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+  m_PrefabInstance: {fileID: 1016328130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563885300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bd48d23cc6f4eefbbc3cc50d36a3e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NarrativeController
 --- !u!82 &1563885306
 AudioSource:
   m_ObjectHideFlags: 0
@@ -757,6 +849,7 @@ AudioSource:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1348786971}
   - {fileID: 302778523}
   - {fileID: 320768773}
   - {fileID: 1025391147}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 using System.Collections;
 public class NarrativeController : MonoBehaviour
@@ -7,15 +8,23 @@ public class NarrativeController : MonoBehaviour
   public AudioSource audioSource;
   public AudioClip typingClip;
   bool isTyping;
-  float typingSpeed = 0.1f;
+  float typingSpeed = 0.05f;
 
 
   public string[] inital_list;
  
+  public UnityEvent onInitialTextFinished;
+
   int index = 0;
 
   void Start(){
-    PrintList(inital_list);
+    StartCoroutine(PrintInitialList());
+  }
+
+  IEnumerator PrintInitialList()
+  {
+      yield return PrintListRoutine(inital_list);
+      onInitialTextFinished?.Invoke();
   }
 
   IEnumerator TypeLine(string line)
@@ -52,7 +61,7 @@ public class NarrativeController : MonoBehaviour
       {
           Print(lines[i]);
           yield return new WaitUntil(() => !isTyping);
-          yield return new WaitForSeconds(2f);
+          yield return new WaitForSeconds(1f);
       }
       text.text = "";
   }
