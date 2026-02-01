@@ -128,8 +128,7 @@ public class Player : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit, 1)){
-          grvty.y = -4;
-          
+            grvty.y = -4;
         }
 
     }
