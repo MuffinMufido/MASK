@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
     public float gravity_scale = 5;
 
     private float xRotation;
-    public float xSensitivity = 60;
-    public float ySensitivity = 60;
+    public float xSensitivity = 10;
+    public float ySensitivity = 10;
 
     public Camera cam;
     public Camera cam_big;
