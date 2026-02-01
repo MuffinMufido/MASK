@@ -31,6 +31,8 @@ Material:
     m_Floats:
     - _Brightness: -0.62
     - _DitherScale: 1.99
+    - _FadeEndY: -15
+    - _FadeStartY: -5
     m_Colors:
     - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}

@@ -106,7 +106,17 @@ public class Player : MonoBehaviour
             grvty.y = -2;
 
         pc.Move(grvty * Time.fixedDeltaTime);
+        
+        Ray ray = new Ray(transform.position, Vector3.up * 1);
 
+        Debug.DrawRay(transform.position, Vector3.up * 1, Color.red, 0);
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, 1)){
+          grvty.y = -4;
+          
+        }
 
     }
 

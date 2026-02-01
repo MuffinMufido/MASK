@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test
+  m_Name: test 2
   m_Shader: {fileID: 4800000, guid: 9814d173636aa55d1acd4a7a33620d20, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,12 +29,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Brightness: -0.7
-    - _DitherScale: 3.25
+    - _Brightness: -0.78
+    - _DitherScale: 2.78
     - _FadeEndY: -15
     - _FadeStartY: -5
     m_Colors:
     - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightColor: {r: 0.99607843, g: 0.615105, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
