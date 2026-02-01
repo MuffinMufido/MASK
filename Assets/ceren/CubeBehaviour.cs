@@ -7,7 +7,8 @@ public class CubeBehaviorNewInput : MonoBehaviour
     [Header("Movement Settings")]
     [Tooltip("Enable this cube to move along a path.")]
     public bool canMove = false;
-
+    public bool canScale = false;
+    public bool canHide = false;
     [Tooltip("Speed of movement along the path.")]
     public float moveSpeed = 2f;
 
@@ -44,13 +45,21 @@ public class CubeBehaviorNewInput : MonoBehaviour
         var map = inputActions.FindActionMap("CubeActions");
 
 
-        hideShowAction = map.FindAction(hideShowActionName);
-        hideShowAction.performed += ctx => ToggleHideShow();
 
 
-        scaleAction = map.FindAction(scaleActionName);
-        scaleAction.performed += ctx => ToggleScale();
 
+
+        if (canHide)
+        {
+            hideShowAction = map.FindAction(hideShowActionName);
+            hideShowAction.performed += ctx => ToggleHideShow();
+
+        }
+        if (canScale)
+        {
+            scaleAction = map.FindAction(scaleActionName);
+            scaleAction.performed += ctx => ToggleScale();
+        }
 
         if (canMove)
         {
@@ -67,15 +76,16 @@ public class CubeBehaviorNewInput : MonoBehaviour
 
     private void OnEnable()
     {
-        hideShowAction.Enable();
-        scaleAction.Enable();
+        if (hideShowAction != null) hideShowAction.Enable();
+        if (scaleAction != null) scaleAction.Enable();
         if (moveAction != null) moveAction.Enable();
     }
 
     private void OnDisable()
     {
-        hideShowAction.Disable();
-        scaleAction.Disable();
+
+          if (hideShowAction != null) hideShowAction.Disable();
+        if (scaleAction != null) scaleAction.Disable();
         if (moveAction != null) moveAction.Disable();
     }
 

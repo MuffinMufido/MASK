@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "name": "MaskActions",
+    "maps": [
+        {
+            "name": "MaskActions",
+            "id": "f099ec59-ea2c-48ed-9356-6cfaf872c783",
+            "actions": [
+                {
+                    "name": "mask1Action",
+                    "type": "Button",
+                    "id": "c58e76a8-90b4-4b26-920a-51e18982fc21",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "mask2Action",
+                    "type": "Button",
+                    "id": "4cd69145-2c6d-48c3-99c3-920c5cac5b7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "mask3Action",
+                    "type": "Button",
+                    "id": "4c4d9e6d-04cd-4bd1-b252-1695814d6a1d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "mask4Action",
+                    "type": "Button",
+                    "id": "7793bf1c-ad52-46cc-9d38-bc87ee590d36",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "76b22972-ae6f-4844-8934-dee468862ec6",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mask1Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc48ed2d-b168-4715-9041-ff1e725211d1",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mask2Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2210c4ed-fe7c-48bd-b7ab-7f53b3192fe9",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mask3Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37023415-bde5-4e39-8779-f884db29290c",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mask4Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
