@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73deb34a7078ba0efb13932456193e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelController
+  dieLimit: -5
   player: {fileID: 1139651753}
   player_spawn: {fileID: 1798022287}
 --- !u!20 &670085209 stripped
@@ -308,6 +309,10 @@ PrefabInstance:
     - target: {fileID: 714662884269836454, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323408870160808331, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: bf
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2323408870160808331, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
       propertyPath: cam_big

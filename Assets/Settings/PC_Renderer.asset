@@ -55,6 +55,20 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &3192795318421641788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd0228fd2e90c55ab66766d36375ec7, type: 3}
+  m_Name: BurnRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::BurnRendererFeature
+  m_Active: 1
+  burnMaterial: {fileID: 2100000, guid: 9ac5e5179e96f99f1a2bd67bc248595b, type: 2}
 --- !u!114 &7833122117494664109
 MonoBehaviour:
   m_ObjectHideFlags: 0
