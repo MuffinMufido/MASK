@@ -597,6 +597,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1270001312}
+    - target: {fileID: 3624606633276680953, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84c3d2d6946b299b58d474faa1e99615, type: 2}
     - target: {fileID: 6486400274383326206, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12
@@ -637,6 +641,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7418859922042150439, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84c3d2d6946b299b58d474faa1e99615, type: 2}
     - target: {fileID: 7602467143963952405, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.26666668
@@ -1454,7 +1462,7 @@ PrefabInstance:
     - target: {fileID: 3724529294574515852, guid: 972f904f69b557132a1b9bc197da5d3c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a7d3d0da5b131a46d9d36826bdf591ce, type: 2}
+      objectReference: {fileID: 2100000, guid: 28c2d84297974f37a8c221b6a4c5dc1d, type: 2}
     - target: {fileID: 3819535200345967379, guid: 972f904f69b557132a1b9bc197da5d3c, type: 3}
       propertyPath: fader
       value: 
