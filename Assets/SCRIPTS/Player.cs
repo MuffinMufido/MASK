@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class Player : MonoBehaviour
 {
+  public UnityEvent die;
 
   [Header("Audio")]
     public AudioSource audioSource;
@@ -151,5 +153,10 @@ public class Player : MonoBehaviour
       cam.enabled = !cam.enabled;
       cam_big.enabled = !cam_big.enabled;
       big_guy = !big_guy;
+    }
+
+    public void Die(){
+      Debug.Log("dead");
+      die.Invoke();
     }
 }

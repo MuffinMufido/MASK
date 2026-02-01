@@ -9,14 +9,13 @@ public class LevelController : MonoBehaviour
     {
       player.transform.position = player_spawn.position;
       player.Init();
+      player.die.AddListener(Spaw);
     }
 
     void Update()
     {
       if(player.transform.position.y < -5){
-        player.pc.enabled = false;
-        player.transform.position = player_spawn.position;
-        player.pc.enabled = true;
+        Spaw();
       }
     }
 
@@ -24,5 +23,10 @@ public class LevelController : MonoBehaviour
       Debug.Log("end level");
       int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
       SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+    public void Spaw(){
+      player.pc.enabled = false;
+      player.transform.position = player_spawn.position;
+      player.pc.enabled = true;
     }
 }
