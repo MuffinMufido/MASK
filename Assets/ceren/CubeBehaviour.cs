@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
-public class CubeBehaviorNewInput : MonoBehaviour
+public class CubeBehavior : MonoBehaviour
 {
     [Header("Movement Settings")]
     [Tooltip("Enable this cube to move along a path.")]
@@ -44,10 +44,6 @@ public class CubeBehaviorNewInput : MonoBehaviour
             originalMass = rb.mass;
 
         var map = inputActions.FindActionMap("CubeActions");
-
-
-
-
 
 
         if (canHide)
