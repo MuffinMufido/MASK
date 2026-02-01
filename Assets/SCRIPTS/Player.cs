@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+  [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip jumpClip;
+
     public PlayerController p;
     public CharacterController pc;
 
@@ -95,6 +100,9 @@ public class Player : MonoBehaviour
           if ( jumpBufferTime >= 0 && (is_grounded || coyoteTimer > 0f))
           {
               grvty.y = Mathf.Sqrt(jump_height * -2f * G);
+
+              audioSource.PlayOneShot(jumpClip);
+              
               jumpRequested = false;
               coyoteTimer = 0f;
           }
