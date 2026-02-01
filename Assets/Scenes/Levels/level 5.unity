@@ -668,6 +668,14 @@ PrefabInstance:
       propertyPath: cam_big
       value: 
       objectReference: {fileID: 670085209}
+    - target: {fileID: 2387793837539084536, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942840363268389516, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6486400274383326206, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12
@@ -708,8 +716,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5887392620564695453, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+    - target: {fileID: 7602467143963952405, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
