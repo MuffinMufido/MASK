@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mask
+  m_Name: Danger
   m_Shader: {fileID: 4800000, guid: 9814d173636aa55d1acd4a7a33620d20, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -34,7 +34,7 @@ Material:
     - _FadeEndY: -15
     - _FadeStartY: -5
     m_Colors:
-    - _DarkColor: {r: 0.7764706, g: 0.62352943, b: 0.64705884, a: 1}
-    - _LightColor: {r: 0.28627452, g: 0.3019608, b: 0.49411765, a: 1}
+    - _DarkColor: {r: 0.9490196, g: 0.827451, b: 0.67058825, a: 1}
+    - _LightColor: {r: 0.9843137, g: 0.9607843, b: 0.9372549, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
