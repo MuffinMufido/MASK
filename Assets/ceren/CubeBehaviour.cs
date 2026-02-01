@@ -22,7 +22,7 @@ public class CubeBehavior : MonoBehaviour
     private Rigidbody rb;
     private float originalMass;
 
-    private bool hidden = false;
+    private bool hidden = true;
     private bool scaledUp = false;
 
     [Header("Input")]
@@ -44,6 +44,7 @@ public class CubeBehavior : MonoBehaviour
             originalMass = rb.mass;
 
         var map = inputActions.FindActionMap("CubeActions");
+        ApplyHiddenState();
 
 
         if (canHide)
@@ -138,8 +139,15 @@ public class CubeBehavior : MonoBehaviour
     }
   
     }
+private void ApplyHiddenState()
+{
+    Renderer rend = GetComponent<Renderer>();
+    Collider col = GetComponent<Collider>();
 
-    // Optional: visualize path in Scene view
+    if (rend != null) rend.enabled = !hidden;
+    if (col != null) col.enabled = !hidden;
+}
+
     private void OnDrawGizmos()
     {
         if (pathPoints == null || pathPoints.Count == 0) return;

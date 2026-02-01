@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/level 5.unity
     guid: 02ccff132971b69e7bf5dde4173c7453
+  - enabled: 1
+    path: Assets/Scenes/Levels/sahoLevel1.unity
+    guid: e13ff97c98fa3cf4a9ff3d4084a20f52
+  - enabled: 1
+    path: Assets/Scenes/Levels/sahoLevel2.unity
+    guid: 938f9c442a4daddd591e470a901eb891
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
