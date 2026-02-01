@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     public PlayerController p;
     public CharacterController pc;
+    public System.Action onBigRequested;
+
 
     private Vector3 grvty;
     private float G = -9.8f * 2.0f;
@@ -51,7 +53,8 @@ public class Player : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        p.Player.Big.performed += ctx => ToggleBigGuy();
+        p.Player.Big.performed += ctx => OnBigRequested();
+
         
     }
 
@@ -94,7 +97,7 @@ public class Player : MonoBehaviour
         camForward.Normalize();
         camRight.Normalize();
 
-        Vector3 moveDir = camForward * input.y + camRight * input.x;
+        Vector3 moveDir = camForward * input.y + camRight * input.x;  
         if(! big_guy){
 
           pc.Move(moveDir * current_speed * Time.fixedDeltaTime);
@@ -148,14 +151,22 @@ public class Player : MonoBehaviour
         }
 
     }
+    void OnBigRequested()
+{
+    if (onBigRequested != null)
+        onBigRequested.Invoke();
+    else
+        ToggleBigGuy();
+}
 
-    void ToggleBigGuy(){
-      cam.enabled = !cam.enabled;
-      cam_big.enabled = !cam_big.enabled;
-      big_guy = !big_guy;
-    }
-
-    public void Die(){
+public void ToggleBigGuy()
+{
+    cam.enabled = !cam.enabled;
+    cam_big.enabled = !cam_big.enabled;
+    big_guy = !big_guy;
+}
+    public void Die()
+    {
       Debug.Log("dead");
       die.Invoke();
     }
