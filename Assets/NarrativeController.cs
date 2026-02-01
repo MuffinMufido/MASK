@@ -4,17 +4,19 @@ using System.Collections;
 public class NarrativeController : MonoBehaviour
 {
   public TMP_Text text;
+  public AudioSource audioSource;
+  public AudioClip typingClip;
   bool isTyping;
-  float typingSpeed = 0.04f;
+  float typingSpeed = 0.1f;
 
-  string[] lines =
-  {
-      "Hello.",
-      "This is a narrative system.",
-      "The text appears here."
-  };
 
+  public string[] inital_list;
+ 
   int index = 0;
+
+  void Start(){
+    PrintList(inital_list);
+  }
 
   IEnumerator TypeLine(string line)
   {
@@ -24,6 +26,11 @@ public class NarrativeController : MonoBehaviour
       foreach (char c in line)
       {
           text.text += c;
+          if (c != ' ' && typingClip != null)
+          {
+              audioSource.pitch = Random.Range(0.9f, 1.1f);
+              audioSource.PlayOneShot(typingClip);
+          }
           yield return new WaitForSeconds(typingSpeed);
       }
 
@@ -31,7 +38,23 @@ public class NarrativeController : MonoBehaviour
   }
 
   void Print(string s){
-       StartCoroutine(TypeLine("hohoho seni sikecem burak amcik seni"));
+       StartCoroutine(TypeLine(s));
+  }
+
+  public void PrintList(string[] lines)
+  {
+      StartCoroutine(PrintListRoutine(lines));
+  }
+
+  IEnumerator PrintListRoutine(string[] lines)
+  {
+      for (int i = 0; i < lines.Length; i++)
+      {
+          Print(lines[i]);
+          yield return new WaitUntil(() => !isTyping);
+          yield return new WaitForSeconds(2f);
+      }
+      text.text = "";
   }
 
 }
