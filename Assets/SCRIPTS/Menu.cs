@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class Menu : MonoBehaviour
     }
 
     void GameStart(){
-      Debug.Log("start");
+      int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+      SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     void ToggleOptions(){

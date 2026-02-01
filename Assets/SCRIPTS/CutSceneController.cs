@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutSceneController : MonoBehaviour
 {
@@ -16,5 +17,7 @@ public class CutSceneController : MonoBehaviour
 
     void EndCutscene(){
       Debug.Log("end");
+      int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+      SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }

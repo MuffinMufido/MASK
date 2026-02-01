@@ -244,6 +244,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87df2345345403f52895d6a14343fe25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndPortal
+--- !u!114 &425717448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1336768022478599598, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+  m_PrefabInstance: {fileID: 2057345430137339850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc629c6f5c15140f0a4fe28f844923ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenFader
 --- !u!1 &574270956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1224,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3819535200345967379, guid: 972f904f69b557132a1b9bc197da5d3c, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 425717448}
+    - target: {fileID: 3819535200345967379, guid: 972f904f69b557132a1b9bc197da5d3c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1139651753}
     - target: {fileID: 4008997899944796900, guid: 972f904f69b557132a1b9bc197da5d3c, type: 3}
       propertyPath: m_Enabled
       value: 0
