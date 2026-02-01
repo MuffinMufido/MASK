@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
+    public int dieLimit = -5;
     public Player player;
     public Transform player_spawn;
 
@@ -14,9 +15,11 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
-      if(player.transform.position.y < -5){
-        Spaw();
-      }
+   
+     if (player.transform.position.y < dieLimit)
+        {
+            Spaw();
+        }
     }
 
     public void EndLevel(){
