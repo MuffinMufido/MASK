@@ -73,8 +73,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb6604bf5c3e84b69ba45773e48680a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  die:
+    m_PersistentCalls:
+      m_Calls: []
   audioSource: {fileID: 948283185051236632}
-  jumpClip: {fileID: 8300000, guid: 8834649ff8f7d482dbb17732b7b0a97b, type: 3}
+  jumpClip: {fileID: 8300000, guid: 2033de52b076aab898af2f2106ddbae0, type: 3}
   pc: {fileID: 0}
   jump_height: 2
   gravity_scale: 5

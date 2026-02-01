@@ -983,6 +983,10 @@ PrefabInstance:
       propertyPath: cam_big
       value: 
       objectReference: {fileID: 670085209}
+    - target: {fileID: 2323408870160808331, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2033de52b076aab898af2f2106ddbae0, type: 3}
     - target: {fileID: 6486400274383326206, guid: 78f46f5cd63f686a99f37e7078e821e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
