@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
 {
     public Player player;
@@ -22,6 +22,7 @@ public class LevelController : MonoBehaviour
 
     public void EndLevel(){
       Debug.Log("end level");
-
+      int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+      SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }
