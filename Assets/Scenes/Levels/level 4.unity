@@ -575,6 +575,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3233697570061018962, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: inital_list.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331214302496845874, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
+      propertyPath: m_text
+      value: press 2 to scale some blocks
+      objectReference: {fileID: 0}
     - target: {fileID: 8425721385245888370, guid: 8e390c01db83e52ef817da3c5238db7a, type: 3}
       propertyPath: m_Name
       value: InGameUi

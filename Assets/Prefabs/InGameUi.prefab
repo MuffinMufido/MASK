@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: press tab to change perspective
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5a7215b0254d403b830651effa66d24, type: 2}
   m_sharedMaterial: {fileID: 737337864893417533, guid: e5a7215b0254d403b830651effa66d24, type: 2}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4293916155
   m_fontColor: {r: 0.9843137, g: 0.9607843, b: 0.9372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
